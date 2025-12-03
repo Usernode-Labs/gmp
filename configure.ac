@@ -3764,7 +3764,7 @@ if test "$gmp_asm_syntax_testing" != no; then
 	  GMP_INCLUDE_MPN(arm/arm-defs.m4) ;;
         64)
 	  case $host in
-	    *-*-darwin*)
+	    *-*-darwin* | *-apple-ios*)
 	      GMP_INCLUDE_MPN(arm64/darwin.m4) ;;
 	    *)
 	      GMP_INCLUDE_MPN(arm64/arm64-defs.m4) ;;
@@ -3816,7 +3816,7 @@ yes
 	    mode32 | 32) GMP_INCLUDE_MPN(powerpc32/elf.m4) ;;
           esac
           ;;
-        *-*-darwin*)
+        *-*-darwin* | *-apple-ios*)
 	  case $ABI in
 	    mode64)      GMP_INCLUDE_MPN(powerpc64/darwin.m4) ;;
 	    mode32 | 32) GMP_INCLUDE_MPN(powerpc32/darwin.m4) ;;
@@ -3856,7 +3856,7 @@ yes
 	    prof | gprof)  GMP_ASM_X86_MCOUNT ;;
 	  esac
 	  case $host in
-	    *-*-darwin*)
+	    *-*-darwin* | *-apple-ios*)
 	      GMP_INCLUDE_MPN(x86/darwin.m4) ;;
 	  esac
           ;;
@@ -3864,7 +3864,7 @@ yes
           GMP_INCLUDE_MPN(x86_64/x86_64-defs.m4)
           AC_DEFINE(HAVE_HOST_CPU_FAMILY_x86_64)
 	  case $host in
-	    *-*-darwin*)
+	    *-*-darwin* | *-apple-ios*)
 	      GMP_INCLUDE_MPN(x86_64/darwin.m4) ;;
 	    *-*-mingw* | *-*-msys | *-*-cygwin)
 	      GMP_INCLUDE_MPN(x86_64/dos64.m4) ;;
